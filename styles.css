@@ -61,15 +61,7 @@ a {
   font-size: 18px;
   transition: 0.2s ease-in-out;
   font-weight: 600;
-}
-
-.navbar a:hover,
-.navbar a:focus-within {
-  color: var(--main-color);
-  /* تحسين إمكانية الوصول بدلاً من outline: none; */
-  outline: 2px solid var(--secondary-color);
-  outline-offset: 2px;
-}
+} 
 
 .menu li {
   margin-right: 2rem;
@@ -104,7 +96,7 @@ a {
   position: fixed;
   display: none;
   -webkit-transform: translate(100%);
-  transform: transl(100%);
+  transform: translate(100%);
 }
 
 .show {
@@ -167,10 +159,10 @@ a {
   width: 20px; 
   height: 20px;
   border: none;
-  background: var(--secondary-color);
- color: #fff; 
-      border-radius: 3px; 
-    }
+  background: var(--secondary-color); 
+  color: #fff;
+  border-radius: 3px; 
+}
 
 
 
@@ -464,9 +456,7 @@ a {
   color: var(--main-color);
 }
 
-.hide {
-  display: none;
-}
+
 
 /* === DESTINATIONS SECTION === */
 .destinations {
@@ -563,7 +553,7 @@ a {
   text-align: center;
 }
 
-.what-we-do .image img {
+.what-we-do .image {
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -952,6 +942,7 @@ a {
     padding: 1.2rem 1rem;
   }
 }
+
 
 
 
