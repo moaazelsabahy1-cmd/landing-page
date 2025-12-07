@@ -104,7 +104,7 @@ a {
   position: fixed;
   display: none;
   -webkit-transform: translate(100%);
-  transform: translate(100%);
+  transform: transl(100%);
 }
 
 .show {
@@ -164,13 +164,15 @@ a {
 }
 
 .hero__banner p button {
-  width: 20px;
+  width: 20px; 
   height: 20px;
   border: none;
   background: var(--secondary-color);
-  color: #fff;
-  border-radius: 3px;
-}
+ color: #fff; 
+      border-radius: 3px; 
+    }
+
+
 
 .hero__banner p > i {
   color: var(--secondary-color);
@@ -565,8 +567,8 @@ a {
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transform: translateY(50px);
+  opacity: 1;
+  transform: translateY(0);
   transition: all 0.8s ease;
 }
 
@@ -864,9 +866,8 @@ a {
     -webkit-transform: translate(0);
     transform: translate(0);
   }
-  .control__menu {
-    display: none;
-  }
+
+
   .feature-card {
     width: 100%;
   }
@@ -951,6 +952,7 @@ a {
     padding: 1.2rem 1rem;
   }
 }
+
 
 
 
