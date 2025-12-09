@@ -194,9 +194,20 @@ a {
 .tabs__panel {
   background: #b9d5de;
   width: fit-content;
-  display: flex;
+  display: block;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  overflow: hidden;
+}
+
+.tabs__panel::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.tabs__panel button {
+  float: left;
 }
 
 .tabs__panel button {
@@ -223,15 +234,19 @@ a {
 }
 
 .details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  display: block;
   padding: 1rem;
   background: #fff;
   border-radius: 15px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-top-left-radius: 0;
+  overflow: hidden;
+}
+
+.details::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 .details div h4 {
   color: rgba(0, 0, 0, 0.6);
@@ -245,6 +260,15 @@ a {
 
 .details > div {
   margin: 1rem 1.5rem;
+  float: left;
+  width: calc(25% - 3rem);
+  box-sizing: border-box;
+}
+
+.details > div.auth {
+  float: right;
+  width: auto;
+  margin-left: auto;
 }
 
 /** GRID SECTION (What we do) ************/
@@ -324,137 +348,6 @@ a {
   gap: 30px;
 }
 
-/* CARD STYLING */
-.article .card {
-  background: #fff;
-  border-radius: 14px;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-  transition: 0.3s;
-  animation: fadeUp 0.9s ease forwards;
-  opacity: 0;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
-}
-
-@keyframes fadeUp {
-  0% { transform: translateY(40px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-.upper__section {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
-}
-
-.upper__section ul {
-  display: flex;
-  width: 100%;
-  padding: 0.5rem 1rem;
-  justify-content: space-between;
-  position: absolute;
-  top: 0.5rem;
-  left: 0;
-  z-index: 10;
-}
-
-.upper__section ul li button {
-  padding: 0.4rem;
-  border: none;
-  color: #fff;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.upper__section ul li:nth-child(1) button {
-  background: var(--secondary-color);
-}
-.upper__section ul li:nth-child(2) button {
-  background: var(--main-color);
-}
-
-.upper__section img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.lower__section {
-  padding: 0.8rem;
-}
-
-.lower__section .txt h1 {
-  color: var(--main-color);
-  margin-bottom: 0.5rem;
-}
-
-.lower__section .txt p {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-.lower__section .icons {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 0;
-  margin-top: 15px;
-}
-
-.lower__section .icons h4 {
-  font-size: 14px;
-  margin-top: 0.5rem;
-  color: rgba(0, 0, 0, 0.6);
-  font-weight: normal;
-}
-
-.lower__section .icons i {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-.lower__section .icons > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.lower__section .price {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 0.8rem;
-}
-
-.lower__section .price i {
-  color: gray;
-  transition: 0.3s ease-in-out;
-}
-
-/* ANIMATION */
-.lower__section .price i.red {
-  color: red;
-  animation: bounce 0.5s linear forwards alternate;
-}
-/* keyframes */
-
-@keyframes bounce {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
-}
-
-.lower__section .price h4 {
-  color: var(--main-color);
-}
 
 
 
@@ -921,6 +814,12 @@ a {
   }
 }
 
+@media screen and (max-width: 900px) {
+  .details > div {
+    width: calc(50% - 3rem);
+  }
+}
+
 @media screen and (max-width: 590px) {
   .tabs {
     margin-top: 3rem;
@@ -930,6 +829,14 @@ a {
   }
   .details > div {
     margin: 0.5rem 1rem;
+    float: none;
+    width: auto;
+    display: block;
+  }
+  .details > div.auth {
+    float: none;
+    width: auto;
+    margin-left: 1rem;
   }
 }
 
@@ -940,6 +847,152 @@ a {
 
   .tabs__panel button {
     padding: 1.2rem 1rem;
+  }
+}    
+
+
+/* ===== PURE OUR PROPERTIES SECTION ===== */
+
+.properties-section {
+  padding: 70px 5vw;
+  background: #fff;
+}
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.property-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e4e4e4;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 14px rgba(0,0,0,0.05);
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+}
+
+.property-img {
+  position: relative;
+  height: 220px;
+}
+
+.property-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tag {
+  position: absolute;
+  top: 10px;
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.featured {
+  left: 10px;
+  background: #34738e;
+}
+
+.sale {
+  right: 10px;
+  background: #0d3d4f;
+}
+
+.property-info {
+  padding: 18px;
+}
+
+.property-info h2 {
+  font-size: 20px;
+  color: var(--main-color);
+  margin-bottom: 5px;
+}
+
+.property-info p {
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.icons div {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-row h3 {
+  color: var(--main-color);
+}
+
+.price-row i {
+  color: #888;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.price-row i:hover {
+  color: red;
+} 
+
+/* ===== NAVBAR MOBILE ===== */
+.fa-bars {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 838px) {
+  #list {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #fff;
+    padding: 1rem 0;
+    gap: 1rem;
+    display: none; /* hidden by default */
+  }
+
+  #list.show {
+    display: flex;
+  }
+
+  .fa-bars {
+    display: block;
+  }
+
+  nav .menu {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  nav .auth {
+    justify-content: center;
   }
 }
 
