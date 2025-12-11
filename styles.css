@@ -128,7 +128,7 @@ a {
 .hero__banner {
   min-height: 90vh;
   border-radius: 15px;
-  background: url("images/estately (1).png") no-repeat;
+  background: url("images/home.png") no-repeat;
   background-size: cover;
   background-position: right center;
   padding: 1rem 5vw;
@@ -207,8 +207,10 @@ a {
 }
 
 .tabs__panel button {
-  float: left;
+  float: none;
+  display: inline-block;
 }
+
 
 .tabs__panel button {
   padding: 1.2rem 0;
@@ -224,12 +226,12 @@ a {
   cursor: pointer;
 }
 
+
 .tabs__panel button:hover,
 .tabs__panel button:focus-within {
-  background-color: #fff;
+  background-color: #ffffff;
 }
-
-.tabs__panel button:nth-child(1) {
+.tabs__panel button:nth-child(0) {
   background: #fff;
 }
 
@@ -270,6 +272,11 @@ a {
   width: auto;
   margin-left: auto;
 }
+
+
+
+
+
 
 /** GRID SECTION (What we do) ************/
 .grid {
@@ -648,11 +655,11 @@ a {
   font-size: 0.9rem;
 }
 
-/* === FOOTER === */
+/* FOOTER */
 .footer {
   background: #0d3d4f;
   color: #fff;
-  padding: 60px 20px 20px;
+  padding: 60px 5vw 20px;
 }
 
 .footer-container {
@@ -660,7 +667,7 @@ a {
   flex-wrap: wrap;
   gap: 40px;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   justify-content: space-between;
 }
 
@@ -671,18 +678,21 @@ a {
 .footer-about h3 {
   font-size: 24px;
   margin-bottom: 15px;
+  color: #fff;
 }
 
 .footer-about p {
   font-size: 14px;
   color: #aaa;
   line-height: 1.6;
+  max-width: 300px;
 }
 
 .footer-links h4,
 .footer-contact h4 {
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  color: #fff;
 }
 
 .footer-links ul {
@@ -691,48 +701,69 @@ a {
 }
 
 .footer-links ul li {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .footer-links ul li a {
   text-decoration: none;
   color: #aaa;
   transition: 0.3s;
+  font-size: 15px;
 }
 
 .footer-links ul li a:hover {
-  color: #0cbcf2;
+  color: #04c0ff;
+  padding-left: 5px;
 }
 
 .footer-contact p {
   font-size: 14px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   gap: 10px;
+  color: #aaa;
+}
+
+.footer-contact i {
+  color: var(--secondary-color);
+  width: 20px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .footer-social a {
-  display: inline-block;
-  margin-right: 10px;
-  color: #aaa;
-  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 16px;
   transition: 0.3s;
 }
 
 .footer-social a:hover {
-  color: #01d9ff;
+  background: var(--secondary-color);
+  transform: translateY(-7px);
 }
-
 .footer-bottom {
   text-align: center;
   margin-top: 40px;
   font-size: 14px;
   color: #777;
-  border-top: 1px solid #333;
-  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 /* === MEDIA QUERIES === */
 
 @media screen and (max-width: 1200px) {
@@ -995,6 +1026,7 @@ a {
     justify-content: center;
   }
 }
+
 
 
 
