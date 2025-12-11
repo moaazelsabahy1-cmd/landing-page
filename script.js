@@ -79,26 +79,27 @@ document.addEventListener("DOMContentLoaded", () => {
   if (panel && details) {
     const buttons = panel.querySelectorAll("button");
 
-    const content = {
-      Rent: {
-        Location: "Athens, Greece",
-        "Property Type": "Apartment",
-        "Property Size": "60m² - 90m²",
-        "Property Price Range": "$600 - $1200",
-      },
-      Buy: {
-        Location: "Santorini, Greece",
-        "Property Type": "Private House",
-        "Property Size": "120m² - 150m²",
-        "Property Price Range": "$85,000 - $95,000",
-      },
-      "Co-Living": {
-        Location: "Thessaloniki, Greece",
-        "Property Type": "Shared Space",
-        "Property Size": "20m² - 40m²",
-        "Property Price Range": "$300 - $700",
-      },
-    };
+const content = {
+  Rent: {
+    Location: "Athens, Greece",
+    "Property Type": "Apartment",
+    Size: "60m² - 90m²",
+    "Price Range": "$600 - $1200",
+  },
+  Buy: {
+    Location: "Santorini, Greece",
+    "Property Type": "Private House",
+    Size: "120m² - 150m²",
+    "Price Range": "$85,000 - $95,000",
+  },
+  "Co-Living": {
+    Location: "Thessaloniki, Greece",
+    "Property Type": "Shared Space",
+    Size: "20m² - 40m²",
+    "Price Range": "$300 - $700",
+  },
+};
+
 
     const setActive = (btn) => {
       buttons.forEach((b) => b.classList.toggle("active", b === btn));
@@ -224,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lightboxImg.src = properties[currentProperty].images[currentImage];
     };
 
-    const showPrev = () => {
+        const showPrev = () => {
       currentImage =
         (currentImage - 1 + properties[currentProperty].images.length) %
         properties[currentProperty].images.length;
@@ -243,11 +244,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-
-
-
-
-  
-
-
